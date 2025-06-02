@@ -1,0 +1,12 @@
+Resultados dos Testes :
+TVT: 60% - 20% - 20%
+
+Best kNN Euclidean params: {'n_components': 80, 'n_neighbors': 3}, Validation Accuracy: 0.9585
+Best kNN Manhattan params: {'n_components': 40, 'n_neighbors': 3}, Validation Accuracy: 0.9575
+Best Logistic Regression params: {'n_components': 100, 'max_iter': 500}, Validation Accuracy: 0.9157
+Best Naive Bayes params: {'n_components': 20}, Validation Accuracy: 0.8067
+
+Test Accuracy kNN Euclidean: 0.9599
+Test Accuracy kNN Manhattan: 0.9564
+Test Accuracy Logistic Regression: 0.9196
+Test Accuracy Naive Bayes: 0.7206
