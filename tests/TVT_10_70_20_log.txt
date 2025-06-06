@@ -1,0 +1,12 @@
+Tests Result :
+Train Amount: 10% - Validation Amount: 70% - Test Amount: 20%
+
+Best kNN Euclidean params: {'n_components': 40, 'n_neighbors': 5}, Validation Accuracy: 0.9278
+Best kNN Manhattan params: {'n_components': 40, 'n_neighbors': 5}, Validation Accuracy: 0.9256
+Best Logistic Regression params: {'n_components': 100, 'max_iter': 3500}, Validation Accuracy: 0.8985
+Best Naive Bayes params: {'n_components': 20}, Validation Accuracy: 0.8087
+
+Test Accuracy kNN Euclidean: 0.9456
+Test Accuracy kNN Manhattan: 0.9449
+Test Accuracy Logistic Regression: 0.9146
+Test Accuracy Naive Bayes: 0.4701

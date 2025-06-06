@@ -10,8 +10,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
 TRAIN_RATIO = 0.7
-VALIDATION_RATIO = 0.15
-TEST_RATIO = 0.15
+VALIDATION_RATIO = 0.1
+TEST_RATIO = 0.2
 
 def TVT_splitter(x, y, train_ratio, validation_ratio, test_ratio):
 
@@ -139,7 +139,8 @@ print(f"Best Naive Bayes params: {best_nb_params}, Validation Accuracy: {best_nb
 # Unir treino + validação para teste final
 X_trainval = np.vstack([x_train_scaled, x_val_scaled])
 y_trainval = np.concatenate([y_train, y_val])
-best_log_params['max_iter'] *= int(TEST_RATIO / VALIDATION_RATIO)  # Ajustar max_iter para o tamanho do conjunto de treino + validação
+# Ajustar max_iter para o tamanho do conjunto de treino + validação
+best_log_params['max_iter'] *= int(len(X_trainval) / len(x_train_scaled))
 
 # Teste final com os melhores parâmetros encontrados, aqui as imagens de teste são classificadas
 
@@ -189,7 +190,7 @@ filename = os.path.join(output_dir, f"TVT_{int(TRAIN_RATIO*100)}_{int(VALIDATION
 
 # Salvar resultados no arquivo
 with open(filename, "w") as f:
-    f.write("Resultados dos Testes :\n")
-    f.write(f"TVT: {TRAIN_RATIO*100:.0f}% - {VALIDATION_RATIO*100:.0f}% - {TEST_RATIO*100:.0f}%\n\n")
+    f.write("Tests Result :\n")
+    f.write(f"Train Amount: {TRAIN_RATIO*100:.0f}% - Validation Amount: {VALIDATION_RATIO*100:.0f}% - Test Amount: {TEST_RATIO*100:.0f}%\n\n")
     for line in results:
         f.write(line + "\n")
