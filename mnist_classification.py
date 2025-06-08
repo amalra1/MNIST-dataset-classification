@@ -10,8 +10,8 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
 TRAIN_RATIO = 0.7
-VALIDATION_RATIO = 0.1
-TEST_RATIO = 0.2
+VALIDATION_RATIO = 0.2
+TEST_RATIO = 0.1
 
 def TVT_splitter(x, y, train_ratio, validation_ratio, test_ratio):
 
